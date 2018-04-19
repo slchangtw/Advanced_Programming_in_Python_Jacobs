@@ -1,37 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 350112
+# JTSK-350112
 # a1_4.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 
-
-def push(stack, element):
-    stack.append(element)
-    print('Pushing {0}'.format(element))
-def pop(stack):
-    if len(stack) == 0:
-        print('Stack underflow')
-    else:
-        print('Popping {0}'.format(stack.pop()))
-def empty(stack):
-    del stack[:]
-    print('Emptying stack')
+if __name__ == '__main__':
     
+    # create items
+    items = list([(233, 'AAA', 10, 2422.5, 'location A'),
+                  (199, 'BB', 90, 0.52, 'location B'), 
+                  (222, 'CC', 100, 0.99, 'location C'), 
+                  (332, 'DDDD', 190, 1.2, 'location D'),
+                  (12, 'EEEE', 62, 200.56, 'location D')])
     
-if  __name__ == '__main__':
-    stack = []
-    while True:
-        command = str(input())
-        if command == 'q':
-            print('Good Bye!')
-            break
-        if command == 's':
-            element = int(input())
-            push(stack, element)
-        if command == 'p':
-            pop(stack)
-        if command == 'e':
-            empty(stack)
-            
+    # print column names
+    print('{0:<5s}\t{1:<10}\t{2:>10}\t{3:>10}\t{4:>10}'.format('id', 'name', 'quantity', 'price', 'location'))
+    
+    # print items
+    for item in items:
+        print('{0:>05d}\t{1:<10}\t{2:>10}\t{3:>10,.2f}\t{4:>10}'.format(item[0], item[1], item[2], item[3], item[4]))
+    
