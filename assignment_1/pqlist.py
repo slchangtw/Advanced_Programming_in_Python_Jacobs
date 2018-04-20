@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # JTSK-350112
-# a1_6.py
+# pqlist.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 
@@ -31,7 +31,7 @@ def pull_highest_priority_element(pq):
     """
     
     # find the index where the element with the highest priority
-    ind, _ = max(enumerate(pq), key=lambda k: k[1][1])
+    ind, _ = min(enumerate(pq), key=lambda k: k[1][1])
     print(pq[ind][0])
     pq.pop(ind)
     

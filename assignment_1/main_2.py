@@ -20,13 +20,13 @@ if __name__ == '__main__':
     (inches, cms) = in2cm_table(start, end, step)
 
     # html strings
-    start_str = '<html>\n<table>\n<tr> <th>inch</th><th>cm</th> </tr>\n'
+    start_str = '<html>\n<table>\n<tr> <th align="right">inch</th><th align="right">cm</th> </tr>\n'
     table_str = ''
     end_str = '</table>\n</html>'
     
     # create a html table
     for i in range(len(inches)):
-        table_str += '<tr> <td>{0}</td><td>{1}</td> </tr>\n'.format(inches[i], cms[i])
+        table_str += '<tr> <td align="right">{0}</td><td align="right">{1}</td> </tr>\n'.format(inches[i], cms[i])
 
     result = start_str + table_str + end_str
 

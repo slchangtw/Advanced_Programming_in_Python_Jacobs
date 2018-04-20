@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # JTSK-350112
-# a1_4.py
+# fdata.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 

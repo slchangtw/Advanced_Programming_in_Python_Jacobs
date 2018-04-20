@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# JTSK-350112
+# test_rational.py
+# Shun-Lung Chang
+# sh.chang@jacobs-university.de
 """
 File: rational.py
 Resources to manipulate rational numbers.

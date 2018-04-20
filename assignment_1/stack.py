@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # JTSK-350112
-# a1_5.py
+# stack.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 
@@ -14,10 +14,10 @@ def pop(stack):
     if len(stack) == 0:
         print('Stack underflow')
     else:
-        print('Popping {0}'.format(stack.pop()))
+        print('Popping element {0}'.format(stack.pop()))
 def empty(stack):
+    print('Popping element {0}'.format(stack.pop(0)))
     del stack[:]
-    print('Emptying stack')
     
     
 if  __name__ == '__main__':

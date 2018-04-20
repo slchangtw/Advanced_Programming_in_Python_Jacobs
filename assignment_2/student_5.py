@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# JTSK-350112
+# student.py
+# Shun-Lung Chang
+# sh.chang@jacobs-university.de
+
 """
 File: student.py
 Resources to manage a student's name and test scores.
