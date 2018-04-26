@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # JTSK-350112
-# student.py
+# circle.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 

@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# JTSK-350112
+# cards.py
+# Shun-Lung Chang
+# sh.chang@jacobs-university.de
+
 """
 File: cards.py
 

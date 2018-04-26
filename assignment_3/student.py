@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# JTSK-350112
+# students.py
+# Shun-Lung Chang
+# sh.chang@jacobs-university.de
+
 """
 File: student.py
 Resources to manage a student's name and test scores.
@@ -34,16 +42,16 @@ class Student(object):
         return max(self._scores)
 
     def __eq__(self, other):
-        if self._name == other._name:
+        if self._name == other._name and self._scores == other._scores:
             return True
         else:
             return False
         
     def __neq__(self, other):
-        if self._name != other._name:
-            return True
-        else:
+        if self._name == other._name and self._scores == other._scores:
             return False
+        else:
+            return True
     
     def __lt__(self, other):
         if self._name < other._name:
@@ -68,7 +76,7 @@ class Student(object):
             return False
  
     def __str__(self):
-        """Returns the string representation of the student."""
+        """Returns the representation of the student."""
         return "Name: " + self._name  + "\nScores: " + \
                 " ".join(map(str, self._scores))
 
