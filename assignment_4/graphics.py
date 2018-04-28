@@ -146,11 +146,8 @@ http://mcsp.wartburg.edu/zelle/python for a quick reference"""
 #     Added Entry boxes.
 
 import time, os, sys
+import tkinter as tk
 
-try:  # import as appropriate for 2.x vs. 3.x
-   import tkinter as tk
-except:
-   import Tkinter as tk
 
 
 ##########################################################################
@@ -453,7 +450,6 @@ class GraphicsObject:
             self.canvas.itemconfig(self.id, options)
             if self.canvas.autoflush:
                 _root.update()
-
 
     def _draw(self, canvas, options):
         """draws appropriate figure on canvas with options provided

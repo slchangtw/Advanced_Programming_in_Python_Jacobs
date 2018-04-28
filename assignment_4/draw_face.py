@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 350112
-# a4_2.py
+# JTSK-350112
+# draw_face.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 
@@ -11,6 +11,7 @@ from graphics import *
 if __name__ == '__main__':
     win = GraphWin()
     
+    # draw a face
     face = Circle(Point(100, 100), 90)
     face.draw(win)
     
@@ -33,6 +34,14 @@ if __name__ == '__main__':
     lower_lip = Rectangle(Point(70, 145), Point(130, 150))
     lower_lip.setFill("pink")
     lower_lip.draw(win)
+    
+    left_ear = Rectangle(Point(5, 100), Point(10, 110))
+    left_ear.setFill("blue")
+    left_ear.draw(win)
+    
+    right_ear = Rectangle(Point(190, 100), Point(195, 110))
+    right_ear.setFill("blue")
+    right_ear.draw(win)
     
     message = Text(Point(80, 195), "Click anywhere to quit")
     message.draw(win)

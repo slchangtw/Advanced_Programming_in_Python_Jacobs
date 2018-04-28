@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 350112
-# a4_1.py
+# JTSK-350112
+# clicksquares.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
 
