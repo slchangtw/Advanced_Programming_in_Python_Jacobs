@@ -21,18 +21,18 @@ def something():
         input_ = int(input("Please enter an integer:"))
         
         if input_ == 1: 
-            raise OneOwnError
+            raise OneOwnError(999)
         elif input_ == 2: 
-            raise TwoOwnError
+            raise TwoOwnError("Error has happend")
         elif input_ == 3: 
-            raise ThreeOwnError
+            raise ThreeOwnError(1.23)
     
     except OneOwnError as e:
-        print("Exception with {0} has been raised".format(999))
+        print(e)
     except TwoOwnError as e:
-        print("Exception with {0} has been raised".format("Error has happend"))
+        print(e)
     except ThreeOwnError as e:
-        print("Exception with {0} has been raised".format("1.23"))
+        print(e)
     except:
         print("An unexpected error occurred")
         raise

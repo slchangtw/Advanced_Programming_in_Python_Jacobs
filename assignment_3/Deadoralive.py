@@ -15,7 +15,7 @@ class Card(object):
 
     RANKS = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
 
-    SUITS = ('Spades', 'Diamonds', 'Hearts', 'Clubs')
+    SUITS = ('Spades', 'Hearts', 'Diamonds', 'Clubs')
 
     def __init__(self, rank, suit):
         """Creates a card with the given rank and suit."""
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     deck.shuffle()
     
     player_wins = 0
-    dealer_wins = 0
+    player_losses = 0
     
     while (len(deck) > 0):
         player = deck.deal()
@@ -105,8 +105,8 @@ if __name__ == '__main__':
         if player > dealer:
             player_wins += 1
         else:
-            dealer_wins += 1
+            player_losses += 1
 
-    print("Player wins: {0}\nDealer wins: {1}".format(player_wins, dealer_wins))
+    print("Player wins: {0}\nPlayer loses: {1}".format(player_wins, player_losses))
     
     
