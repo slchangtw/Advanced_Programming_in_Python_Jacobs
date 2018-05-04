@@ -11,13 +11,16 @@ def push(stack, element):
     stack.append(element)
     print('Pushing {0}'.format(element))
 def pop(stack):
-    if len(stack) == 0:
+    if not stack:
         print('Stack underflow')
     else:
         print('Popping element {0}'.format(stack.pop()))
 def empty(stack):
-    print('Popping element {0}'.format(stack.pop(0)))
-    del stack[:]
+    if not stack:
+        print('Stack underflow')
+    else:
+        print('Popping element {0}'.format(stack.pop(0)))
+        del stack[:]
     
     
 if  __name__ == '__main__':
