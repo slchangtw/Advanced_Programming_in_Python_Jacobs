@@ -8,8 +8,8 @@
 # sh.chang@jacobs-university.de
 
 
-import Gnuplot
-import pickle
+import subprocess
+import csv
 
 if __name__ == '__main__':
     
@@ -17,23 +17,18 @@ if __name__ == '__main__':
     x = [i for i in range(-5, 6, 1)]
     x_square = [i ** 2 for i in x]
     
-    # put x and x square into a dictionary
-    dic_x = {'x': x, 'x_square': x_square}
-    
-    # print x and x square
-    for i in range(len(dic_x['x'])):
-        print('x is {0} and x square is {1}'.format(dic_x['x'][i], dic_x['x_square'][i]))
-        
-    # make square.dat
-    with open('square.dat', 'wb') as f:
-        pickle.dump(dic_x, f, pickle.HIGHEST_PROTOCOL)
+    # create square.dat
+    with open('squares.dat', 'w') as f:
+        writer = csv.writer(f, delimiter='\t')
+        writer.writerows(zip(x, x_square))
     
     # plot
-    g = Gnuplot.Gnuplot()
-    d = Gnuplot.Data(dic_x['x'], dic_x['x_square'], with_="lines")
-    g.plot(d)
-    
-    # save the plot
-    g.hardcopy(filename='result.png', terminal = 'png') 
-    
+    proc = subprocess.Popen(['gnuplot'], shell = True, stdin = subprocess.PIPE)
+
+    proc.stdin.write(b'set term png\n')
+    proc.stdin.write(b'set output "result.png"\n')
+    proc.stdin.write(b'plot "squares.dat" with linespoints\n')
+    proc.stdin.write(b'quit\n')
+    proc.stdin.flush()
+
     
