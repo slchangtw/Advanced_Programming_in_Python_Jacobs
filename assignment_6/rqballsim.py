@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 350112
+# JTSK-350112
 # a6_1.py
 # Shun-Lung Chang
 # sh.chang@jacobs-university.de
@@ -20,9 +20,12 @@ def printIntro():
 def getInputs():
     # RETURNS probA, probB, number of games to simulate
     
-    a = float(input("What is the prob. player A wins a serve? "))
-    b = float(input("What is the prob. player B wins a serve? "))
-    n = int(input("How many games to simulate? "))
+    a = float(input("What is the prob. player A wins a serve (between 0 and 1)? "))
+    b = float(input("What is the prob. player B wins a serve (between 0 and 1)? "))
+    n = int(input("How many games to simulate (larger than 0)? "))
+    
+    if not (0 <= a <= 1) or not (0 <= b <= 1) or n <= 0:
+        raise ValueError('Some inputs are invalid.')
     return a, b, n
 
 def gameOver(a,b):
@@ -82,4 +85,7 @@ def main():
     printSummary(winsA, winsB)
     
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as e:
+        print(e)
