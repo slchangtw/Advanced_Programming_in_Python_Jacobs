@@ -20,7 +20,7 @@ def empty(stack):
         print('Stack underflow')
     else:
         print('Popping element {0}'.format(stack.pop(0)))
-        del stack[:]
+        stack.clear()
     
     
 if  __name__ == '__main__':
